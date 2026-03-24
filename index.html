@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>縦読みメーカー — サポート</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #e8e6e3;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: linear-gradient(180deg, #12121f 0%, #0a0a0f 100%);
+      border-bottom: 1px solid #1e1e35;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .header-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #0e0e1a, #1a1a3a);
+      border: 1px solid #2a2a45;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: 900;
+      background-image: linear-gradient(135deg, #64b5f6, #ce93d8, #ef9a9a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #64b5f6 0%, #ce93d8 50%, #ef9a9a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      color: #6a6a8a;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #8888aa;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e1e35;
+    }
+
+    p {
+      color: #b0b0cc;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: #8cacff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #b0c8ff;
+      text-decoration: underline;
+    }
+
+    .card {
+      background: #0c0c18;
+      border: 1px solid #1e1e35;
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #e8e6e3;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+    }
+
+    .mode-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mode-item {
+      background: #0c0c18;
+      border: 1px solid #1e1e35;
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mode-icon {
+      font-size: 20px;
+      width: 36px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .mode-info {
+      flex: 1;
+    }
+
+    .mode-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #e8e6e3;
+    }
+
+    .mode-desc {
+      font-size: 12px;
+      color: #6a6a8a;
+      margin: 0;
+    }
+
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .badge-free {
+      background: #1a2a1a;
+      color: #6aff8a;
+      border: 1px solid #2a4a2a;
+    }
+
+    .badge-pro {
+      background: #1a1a3a;
+      color: #8cacff;
+      border: 1px solid #3a3a7a;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #2a2a5a, #3a3a7a);
+      border: 1.5px solid #4a4a8a;
+      border-radius: 10px;
+      color: #c0c0ff;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Noto Sans JP', sans-serif;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .contact-btn:hover {
+      background: linear-gradient(135deg, #3a3a7a, #4a4a9a);
+      text-decoration: none;
+      color: #d0d0ff;
+    }
+
+    .faq-q {
+      font-size: 14px;
+      font-weight: 700;
+      color: #e8e6e3;
+      margin-bottom: 6px;
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: #8888aa;
+      margin-bottom: 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid #1e1e35;
+      color: #4a4a6a;
+      font-size: 12px;
+    }
+
+    .privacy-content p {
+      font-size: 13px;
+      color: #8888aa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-icon">縦</div>
+    <h1>縦読みメーカー</h1>
+    <p>隠しメッセージをXに投稿しよう</p>
+  </div>
+
+  <div class="container">
+
+    <!-- アプリ概要 -->
+    <section>
+      <h2>アプリについて</h2>
+      <p>
+        縦読みメーカーは、X（旧Twitter）で話題のインプレゾンビ対策として「縦読み」テキストを簡単に作成できるアプリです。
+        隠したいメッセージを入力するだけで、ダミー文字に紛れた縦読み・渦巻きテキストを自動生成します。
+      </p>
+    </section>
+
+    <!-- モード一覧 -->
+    <section>
+      <h2>読み方パターン</h2>
+      <div class="mode-list">
+        <div class="mode-item">
+          <div class="mode-icon">⬅</div>
+          <div class="mode-info">
+            <div class="mode-name">右→左 縦読み</div>
+            <div class="mode-desc">右端の列から縦に読む伝統的なスタイル</div>
+          </div>
+          <span class="badge badge-free">無料</span>
+        </div>
+        <div class="mode-item">
+          <div class="mode-icon">🌀</div>
+          <div class="mode-info">
+            <div class="mode-name">右上起点 渦巻き</div>
+            <div class="mode-desc">右上から時計回りに渦巻き状に読む</div>
+          </div>
+          <span class="badge badge-free">無料</span>
+        </div>
+        <div class="mode-item">
+          <div class="mode-icon">➡</div>
+          <div class="mode-info">
+            <div class="mode-name">左→右 縦読み</div>
+            <div class="mode-desc">左端の列から縦に読むバリエーション</div>
+          </div>
+          <span class="badge badge-pro">Pro</span>
+        </div>
+        <div class="mode-item">
+          <div class="mode-icon">🌀</div>
+          <div class="mode-info">
+            <div class="mode-name">左上起点 渦巻き</div>
+            <div class="mode-desc">左上から反時計回りに渦巻き状に読む</div>
+          </div>
+          <span class="badge badge-pro">Pro</span>
+        </div>
+        <div class="mode-item">
+          <div class="mode-icon">✏️</div>
+          <div class="mode-info">
+            <div class="mode-name">カスタムパス</div>
+            <div class="mode-desc">グリッドを指でなぞって自由に読み順を設定</div>
+          </div>
+          <span class="badge badge-pro">Pro</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section>
+      <h2>よくある質問</h2>
+
+      <div class="card">
+        <p class="faq-q">Q. 作ったテキストをXに投稿するとちゃんと縦読みになりますか？</p>
+        <p class="faq-a">Xの表示幅はデバイスやフォントサイズによって異なります。プレビューで確認しながら列数を調整し、投稿後に表示を確認してください。</p>
+      </div>
+
+      <div class="card">
+        <p class="faq-q">Q. Pro版は月額課金ですか？</p>
+        <p class="faq-a">いいえ。Pro版は¥300の買い切りです。一度購入すれば追加料金は一切かかりません。</p>
+      </div>
+
+      <div class="card">
+        <p class="faq-q">Q. 機種変更したらProの購入は引き継げますか？</p>
+        <p class="faq-a">はい。同じApple IDでサインインしていれば、アプリ内の「復元」ボタンから購入を復元できます。</p>
+      </div>
+
+      <div class="card">
+        <p class="faq-q">Q. カスタムパスとは何ですか？</p>
+        <p class="faq-a">グリッド上を指でなぞって、自分だけの読み順を設定できるPro限定機能です。銀行アプリのパターン認証のような操作で、縦読みや渦巻きに収まらないオリジナルのパターンを作れます。</p>
+      </div>
+
+      <div class="card">
+        <p class="faq-q">Q. 個人情報は収集されますか？</p>
+        <p class="faq-a">本アプリは一切の個人情報を収集・送信しません。すべての処理はお使いの端末上で完結します。</p>
+      </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section>
+      <h2>お問い合わせ</h2>
+      <p>ご質問・ご要望・不具合の報告は、下記メールアドレスまでお気軽にご連絡ください。</p>
+      <a href="mailto:contact@kouworks.jp" class="contact-btn">contact@kouworks.jp</a>
+    </section>
+
+    <!-- プライバシーポリシー -->
+    <section>
+      <h2>プライバシーポリシー</h2>
+      <div class="privacy-content">
+        <p>kouworks（以下「開発者」）は、縦読みメーカー（以下「本アプリ」）におけるユーザーのプライバシーを尊重し、以下の方針を定めます。</p>
+
+        <div class="card">
+          <h3>1. 個人情報の収集について</h3>
+          <p>本アプリは、ユーザーの個人情報を一切収集しません。入力されたメッセージやテキストデータはすべて端末内で処理され、外部サーバーへの送信は行いません。</p>
+        </div>
+
+        <div class="card">
+          <h3>2. 第三者サービスについて</h3>
+          <p>本アプリはApp内課金（StoreKit）のみを利用しており、購入処理はAppleのシステムを通じて行われます。開発者が決済情報にアクセスすることはありません。</p>
+        </div>
+
+        <div class="card">
+          <h3>3. 分析・広告について</h3>
+          <p>本アプリは第三者の分析ツールや広告SDKを使用していません。</p>
+        </div>
+
+        <div class="card">
+          <h3>4. お問い合わせ</h3>
+          <p>プライバシーに関するご質問は <a href="mailto:contact@kouworks.jp">contact@kouworks.jp</a> までご連絡ください。</p>
+        </div>
+
+        <div class="card">
+          <h3>5. 改定について</h3>
+          <p>本ポリシーは必要に応じて改定される場合があります。改定時は本ページにて更新します。</p>
+        </div>
+
+        <p style="margin-top: 16px; font-size: 12px; color: #4a4a6a;">最終更新日: 2026年3月24日</p>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="footer">
+    &copy; 2026 kouworks. All rights reserved.
+  </div>
+
+</body>
+</html>
